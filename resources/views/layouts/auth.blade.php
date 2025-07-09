@@ -17,7 +17,7 @@
         <div class="row align-items-center justify-content-center">
             <div class="col-lg-4 col-md-6 offset-md-6">
                 <div class="text-center">
-                    <img src="{{ asset('assets/img/codeflix_logo.png') }}" alt="codeflix-title">
+                    <img src="{{ asset('assets/img/codeflix_logo.png') }}" class="codeflix-title" alt="Codeflix Logo">
                     <h3 class="codeflix-sign-in">@yield('page-title')</h3>
                 </div>
                 @if ($errors->any())
