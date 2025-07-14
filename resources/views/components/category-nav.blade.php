@@ -8,7 +8,8 @@
                 <ul>
                     @foreach ($chunk as $category)
                         <li>
-                            <a class="dropdown-item" href="#">{{ $category->title }}</a>
+                            <a class="dropdown-item"
+                                href="{{ route('categories.show', $category->slug) }}">{{ $category->title }}</a>
                         </li>
                     @endforeach
                 </ul>

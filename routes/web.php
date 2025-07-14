@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\SubscribeController;
 use Illuminate\Http\Request;
@@ -15,7 +16,10 @@ Route::post('/logout', function (Request $request) {
     return app(\Laravel\Fortify\Http\Controllers\AuthenticatedSessionController::class)->destroy($request);
 })->name('logout')->middleware(['auth', 'logout.device']);
 
+Route::get('/movies/{movie:slug}', [MovieController::class, 'show'])->name('movies.show');
+
 Route::get('subscribe/plans', [SubscribeController::class, 'showPlans'])->name('subscribe.plans');
 Route::get('subscribe/plan/{plan}', [SubscribeController::class, 'checkoutPlan'])->name('subscribe.checkout');
 Route::post('subscribe/checkout', [SubscribeController::class, 'processCheckout'])->name('subscribe.process');
 Route::get('subscribe/success', [SubscribeController::class, 'showSuccess'])->name('subscribe.success');
+Route::get('/categories/{category:slug}', [CategoryController::class, 'show'])->name('categories.show');
