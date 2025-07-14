@@ -16,10 +16,11 @@ Route::post('/logout', function (Request $request) {
     return app(\Laravel\Fortify\Http\Controllers\AuthenticatedSessionController::class)->destroy($request);
 })->name('logout')->middleware(['auth', 'logout.device']);
 
-Route::get('/movies/{movie:slug}', [MovieController::class, 'show'])->name('movies.show');
 
 Route::get('subscribe/plans', [SubscribeController::class, 'showPlans'])->name('subscribe.plans');
 Route::get('subscribe/plan/{plan}', [SubscribeController::class, 'checkoutPlan'])->name('subscribe.checkout');
 Route::post('subscribe/checkout', [SubscribeController::class, 'processCheckout'])->name('subscribe.process');
 Route::get('subscribe/success', [SubscribeController::class, 'showSuccess'])->name('subscribe.success');
 Route::get('/categories/{category:slug}', [CategoryController::class, 'show'])->name('categories.show');
+Route::get('/movies/search', [MovieController::class, 'search'])->name('movies.search');
+Route::get('/movies/{movie:slug}', [MovieController::class, 'show'])->name('movies.show');

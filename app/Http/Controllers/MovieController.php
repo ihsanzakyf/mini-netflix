@@ -39,4 +39,16 @@ class MovieController extends Controller implements HasMiddleware
             'streamingUrl' => $streamingUrl
         ]);
     }
+
+    public function search(Request $request)
+    {
+        $search = $request->input('q');
+        $movies = Movie::where('title', 'like', "%$search%")->get();
+        // $movies = Movie::search($search)->get();
+
+        return view('movies.search', [
+            'keyword' => $search,
+            'movies' => $movies
+        ]);
+    }
 }
