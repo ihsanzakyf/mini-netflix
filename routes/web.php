@@ -6,17 +6,13 @@ use App\Http\Controllers\SubscribeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
+Route::get('/', [MovieController::class, 'index']);
 Route::get('/home', [MovieController::class, 'index'])->name('home');
-
+Route::get('/movies', [MovieController::class, 'all'])->name('movies.index');
 Route::post('/logout', function (Request $request) {
     return app(\Laravel\Fortify\Http\Controllers\AuthenticatedSessionController::class)->destroy($request);
 })->name('logout')->middleware(['auth', 'logout.device']);
-
-
 Route::get('subscribe/plans', [SubscribeController::class, 'showPlans'])->name('subscribe.plans');
 Route::get('subscribe/plan/{plan}', [SubscribeController::class, 'checkoutPlan'])->name('subscribe.checkout');
 Route::post('subscribe/checkout', [SubscribeController::class, 'processCheckout'])->name('subscribe.process');
@@ -24,3 +20,9 @@ Route::get('subscribe/success', [SubscribeController::class, 'showSuccess'])->na
 Route::get('/categories/{category:slug}', [CategoryController::class, 'show'])->name('categories.show');
 Route::get('/movies/search', [MovieController::class, 'search'])->name('movies.search');
 Route::get('/movies/{movie:slug}', [MovieController::class, 'show'])->name('movies.show');
+Route::get('/test-expired', function () {
+    $membership = \App\Models\Membership::find(1);
+    event(new \App\Events\MembershipHasExpired($membership));
+
+    return 'Event fired';
+});

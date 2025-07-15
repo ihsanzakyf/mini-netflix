@@ -42,8 +42,10 @@ class Movie extends Model
 
     public function getAverageRatingAttribute()
     {
-        return $this->ratings()->avg('rating');
+        $avg = $this->ratings()->avg('rating');
+        return $avg ? round($avg, 1) : null;
     }
+
 
     public function getStreamingUrl(String $planResolution)
     {

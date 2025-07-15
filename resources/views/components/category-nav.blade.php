@@ -16,4 +16,7 @@
             @endforeach
         </div>
     </li>
+    <li class="nav-item">
+        <a class="nav-link text-white" href="{{ route('movies.index') }}">Movie</a>
+    </li>
 </ul>

@@ -27,6 +27,7 @@
     </footer>
     <script src="{{ asset('assets/js/bootstrap.bundle.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    @stack('scripts')
     <script>
         const swiper = new Swiper('.swiper', {
             speed: 400,
