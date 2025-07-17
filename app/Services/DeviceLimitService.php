@@ -4,8 +4,8 @@ namespace App\Services;
 
 use App\Models\User;
 use App\Models\UserDevice;
-use Jenssegers\Agent\Facades\Agent;
 use Illuminate\Support\Str;
+use Jenssegers\Agent\Facades\Agent;
 
 class DeviceLimitService
 {

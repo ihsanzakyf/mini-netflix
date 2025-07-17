@@ -7,9 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/login.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/fontawesome-free-6.6.0-web/css/all.min.css') }}" rel="stylesheet">
 </head>
 
 <body>

@@ -3,12 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Scout\Searchable;
 
 class Movie extends Model
 {
-    use Searchable;
-
     protected $fillable = [
         'title',
         'slug',
@@ -24,11 +21,11 @@ class Movie extends Model
         'url_4k',
     ];
 
+    protected $appends = ['formatted_duration', 'average_rating'];
+
     protected $casts = [
         'release_date' => 'date',
     ];
-
-    protected $appends = ['formatted_duration', 'average_rating'];
 
     public function categories()
     {
@@ -46,14 +43,13 @@ class Movie extends Model
         return $avg ? round($avg, 1) : null;
     }
 
-
-    public function getStreamingUrl(String $planResolution)
+    public function getStreamingUrl(string $planResolution)
     {
         return match ($planResolution) {
             '720p' => $this->url_720,
             '1080p' => $this->url_1080,
             '4k' => $this->url_4k,
-            default => $this->url_720
+            default => $this->url_720,
         };
     }
 
@@ -63,13 +59,11 @@ class Movie extends Model
         $minutes = $this->duration % 60;
         $formatted = '';
         if ($hours > 0) {
-            $formatted .= "{$hours}h";
+            $formatted .= "{$hours}h ";
         }
-
-        if ($minutes > 0 || $hours > 0) {
-            $formatted .= " {$minutes}m";
+        if ($minutes > 0 || $hours == 0) {
+            $formatted .= "{$minutes}m";
         }
-
         return trim($formatted);
     }
 }

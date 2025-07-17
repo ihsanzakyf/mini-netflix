@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Codeflix</title>
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
@@ -21,13 +22,12 @@
             <p class="footer-title">&copy;
                 <script>
                     document.write(new Date().getFullYear());
-                </script> CODEPOLITAN. All rights reserved.
+                </script> Codeflix
             </p>
         </div>
     </footer>
     <script src="{{ asset('assets/js/bootstrap.bundle.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    @stack('scripts')
     <script>
         const swiper = new Swiper('.swiper', {
             speed: 400,
@@ -62,6 +62,8 @@
             },
         });
     </script>
+    @stack('scripts')
+    @stack('styles')
 </body>
 
 </html>

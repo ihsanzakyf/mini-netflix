@@ -11,7 +11,7 @@ class Plan extends Model
         'price',
         'duration',
         'resolution',
-        'max_devices'
+        'max_devices',
     ];
 
     public function memberships()
