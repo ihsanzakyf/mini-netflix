@@ -1,61 +1,163 @@
 <p align="center"><a href="#" target="_blank"><img src="public/assets/img/codeflix_logo.png" width="400" alt="Codeflix Logo"></a></p>
 
-<br />
 
-## About Laravel
+## 🎬 Codeflix
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Mini Netflix adalah aplikasi streaming video sederhana berbasis Laravel, yang memungkinkan pengguna untuk berlangganan paket tontonan melalui gateway pembayaran Midtrans. Aplikasi ini dirancang menyerupai layanan seperti Netflix namun dalam skala kecil dan edukatif.
 
--   [Simple, fast routing engine](https://laravel.com/docs/routing).
--   [Powerful dependency injection container](https://laravel.com/docs/container).
--   Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
--   Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
--   Database agnostic [schema migrations](https://laravel.com/docs/migrations).
--   [Robust background job processing](https://laravel.com/docs/queues).
--   [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 🖥️ Tampilan Aplikasi Codeflix
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<div align="center">
+<img src="https://github.com/ihsanzakyf/mini-netflix/blob/main/public/assets/img/readme/login-page.png?raw=true" alt="Login" width="45%" />
+  <img src="https://raw.githubusercontent.com/ihsanzakyf/mini-netflix/main/public/assets/img/readme/register-page.png
+" alt="Register Page" width="45%"/>
+</div>
 
-## Learning Laravel
+<br/>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+<div align="center">
+<img src="https://github.com/ihsanzakyf/mini-netflix/blob/main/public/assets/img/readme/reset-password-page.png?raw=true" alt="Reset Password Page" width="45%"/>
+<img src="https://github.com/ihsanzakyf/mini-netflix/blob/main/public/assets/img/readme/payment-page.png?raw=true" alt="Payment Page" width="45%" />
+</div>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+<br/>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<div align="center">
+ <img src="https://github.com/ihsanzakyf/mini-netflix/blob/main/public/assets/img/readme/popup-payment-gateway.png?raw=true" alt="Payment Page" width="45%" />
+  <img src="https://github.com/ihsanzakyf/mini-netflix/blob/main/public/assets/img/readme/payment-success-by-midtrans.png?raw=true" alt="Success Payment Page By Midtrans" width="45%" />
+</div>
 
-## Laravel Sponsors
+<br/>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+<div align="center">
+<img src="https://github.com/ihsanzakyf/mini-netflix/blob/main/public/assets/img/readme/payment-success.png?raw=true" alt="Success Payment Page" width="45%"/>
+<img src="https://github.com/ihsanzakyf/mini-netflix/blob/main/public/assets/img/readme/home-page.png?raw=true" alt="Home Page" width="45%" />
+</div>
 
-### Premium Partners
+<br/>
 
--   **[Vehikl](https://vehikl.com/)**
--   **[Tighten Co.](https://tighten.co)**
--   **[WebReinvent](https://webreinvent.com/)**
--   **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
--   **[64 Robots](https://64robots.com)**
--   **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
--   **[Cyber-Duck](https://cyber-duck.co.uk)**
--   **[DevSquad](https://devsquad.com/hire-laravel-developers)**
--   **[Jump24](https://jump24.co.uk)**
--   **[Redberry](https://redberry.international/laravel/)**
--   **[Active Logic](https://activelogic.com)**
--   **[byte5](https://byte5.de)**
--   **[OP.GG](https://op.gg)**
+<div align="center">
+ <img src="https://github.com/ihsanzakyf/mini-netflix/blob/main/public/assets/img/readme/detail-movie.png?raw=true
+" alt="Detail Movie Page" width="45%" />
+  <img src="https://github.com/ihsanzakyf/mini-netflix/blob/main/public/assets/img/readme/movie-playing.png?raw=true" alt="Movie Play" width="45%" />
+</div>
 
-## Contributing
+<br/>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+<div align="center">
+ <img src="https://github.com/ihsanzakyf/mini-netflix/blob/main/public/assets/img/readme/email-notification-membership-expired.png?raw=true" alt="Email Membership Expired" width="45%" />
+  <img src="https://github.com/ihsanzakyf/mini-netflix/blob/main/public/assets/img/readme/email-notification-reset-password.png?raw=true" alt="Email Reset Password" width="45%" />
+</div>
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 🚀 Fitur Utama
 
-## Security Vulnerabilities
+- 🔐 **Autentikasi dengan Laravel Fortify**  
+  Sistem login, register, dan lupa password ditangani oleh Laravel Fortify. Validasi dan keamanan bawaan Laravel seperti proteksi brute force juga sudah termasuk.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- 📧 **Pengiriman Email Dinamis (Mailable)**  
+  Semua notifikasi email (termasuk reset password dan notifikasi membership) menggunakan `Mailable` Laravel. Email bisa dikustomisasi di file Blade.
 
-## License
+- ⏰ **Membership Scheduler (Jobs / Cron Jobs)**  
+  Sistem berlangganan akan dicek secara otomatis menggunakan **Scheduler** dan **Jobs**. Ketika masa aktif langganan melebihi durasi paket (misalnya 30 hari), langganan akan otomatis ditandai tidak aktif.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- 💳 **Pembayaran Online via Midtrans**  
+  Pengguna dapat membeli paket langganan menggunakan metode pembayaran seperti bank transfer melalui integrasi dengan Midtrans (Snap API).
+
+---
+
+### 📥 Instalasi & Setup
+
+ **1. Clone Repo**
+
+```bash
+git clone https://github.com/ihsanzakyf/mini-netflix.git
+cd mini-netflix
+```
+
+ **2. Instalasi Dependency**
+
+```bash
+composer install
+npm install && npm run dev
+```
+
+ **3. Setup File Environment**
+
+```bash
+cp .env.example .env
+php artisan key:generate
+
+APP_NAME=Codeflix
+APP_URL=http://127.0.0.1:8000
+
+DB_DATABASE=your_db
+DB_USERNAME=root
+DB_PASSWORD=
+
+MAIL_MAILER=smtp
+MAIL_HOST=127.0.0.1
+MAIL_PORT=1025
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS=no-reply@=codeflix.com
+MAIL_FROM_NAME="Codeflix"
+
+MIDTRANS_SERVER_KEY=your_midtrans_server_key
+MIDTRANS_CLIENT_KEY=your_midtrans_client_key
+MIDTRANS_IS_PRODUCTION=false
+```
+
+ **4. Migrasi & Seeder**
+
+```bash
+php artisan migrate --seed
+```
+
+ **5. Running App**
+
+```bash
+php artisan serve
+```
+
+ **6. Jalankan Scheduler (Opsional - Untuk Cron Membership)**
+
+```bash
+- Manual
+php artisan schedule:work
+
+-Server
+* * * * * php /path/to/artisan schedule:run >> /dev/null 2>&1
+```
+
+### 🧪 Testing Midtrans (Mode Sandbox)
+
+ **1. Arahkan webhook midtrans**  
+ Pastikan kamu sudah mengatur server key Midtrans sandbox, lalu gunakan data testing seperti:
+
+ - Bank: BCA  
+ - VA: Dikirim otomatis  
+ - Status: Settlement  
+
+ Pastikan juga webhook Midtrans mengarah ke:
+
+ ```bash
+ https://{subdomain}.ngrok-free.app/api/payment/callback
+ ```
+ Gunakan ngrok untuk expose local ke public:
+ 
+ ```bash
+ ngrok http 8000
+ ```
+
+ ### 📬 Mailhog untuk Testing Email
+
+```bash
+# Jalankan mailhog (jika sudah diinstal)
+mailhog
+# Kemudian akses di
+http://localhost:8025
+```
+
+
