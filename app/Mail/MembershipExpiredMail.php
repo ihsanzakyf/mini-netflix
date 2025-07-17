@@ -44,7 +44,7 @@ class MembershipExpiredMail extends Mailable
             with: [
                 'name' => $this->membership->user->name,
                 'expiredDate' => $this->membership->end_date->format('d M Y'),
-                'renewUrl' => url('/renew'),
+                'renewUrl' => url('/subscribe/plans'),
             ],
         );
     }
