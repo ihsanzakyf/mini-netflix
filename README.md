@@ -2,7 +2,7 @@
 
 ## 🎬 Codeflix
 
-Mini Netflix adalah aplikasi streaming video sederhana berbasis Laravel, yang memungkinkan pengguna untuk berlangganan paket tontonan melalui gateway pembayaran Midtrans. Aplikasi ini dirancang menyerupai layanan seperti Netflix namun dalam skala kecil dan edukatif.
+Codeflix adalah aplikasi streaming video sederhana berbasis Laravel, yang memungkinkan pengguna untuk berlangganan paket tontonan melalui gateway pembayaran Midtrans. Aplikasi ini dirancang menyerupai layanan seperti Netflix namun dalam skala kecil dan edukatif.
 
 ### 🖥️ Tampilan Aplikasi Codeflix
 
